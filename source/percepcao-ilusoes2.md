@@ -1,5 +1,3 @@
-# Otimizar o "Above the Fold"
-
 ## crie ilusões para dar a impressão que o site carrega mais rápido
 
 - conteúdo ATF: carregar o mais rápido possível

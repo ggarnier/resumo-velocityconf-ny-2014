@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Resumo da Velocity Conf NY 2014</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="author" content="Guilherme Garnier">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -89,34 +89,31 @@
 
       <section data-markdown>
         <script type="text/template">
-          # Otimizar o "Above the Fold"
+          ## Otimizar o "Above the Fold"
 
-TODO: colocar imagem
+![Above the fold](images/above-the-fold.jpg)
 
-Jakob Nielsen
 
 - feedback imediato em 100 ms
 - após 1 s, o usuário perde o foco
 
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Otimizar o "Above the Fold"
-
-## crie ilusões para dar a impressão que o site carrega mais rápido
-
-TODO: imagem
+Fonte: Jakob Nielsen
 
         </script>
       </section>
 
       <section data-markdown>
         <script type="text/template">
-          # Otimizar o "Above the Fold"
+          <!-- .slide: data-background="images/ilusionista.jpg" -->
 
-## crie ilusões para dar a impressão que o site carrega mais rápido
+# crie ilusões para dar a impressão que o site carrega mais rápido
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## crie ilusões para dar a impressão que o site carrega mais rápido
 
 - conteúdo ATF: carregar o mais rápido possível
 - conteúdo "Below The Fold" pode ser lazy
@@ -124,437 +121,6 @@ TODO: imagem
 - web fonts: após carregar, armazenar no local storage
 - exibir inicialmente dados cacheados, depois atualizar
 - **colocar inline o CSS do conteúdo ATF**
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # scripts de terceiros não bloqueantes
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # scripts de terceiros não bloqueantes
-
-## scripts de terceiros mais usados
-
-- ads
-- tracking (Google Analytics)
-- fontes
-- botões de share
-- bibliotecas e frameworks
-
-## [2014] 38% dos scripts são de terceiros
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # scripts de terceiros não bloqueantes
-
-## principais problemas
-
-- performance
-- Single Point of Failure (SPOF)
-
-### performance
-
-- JS bloqueia o parsing da página
-- yahoo mail desabilitou ads por 3 dias ==> load time 73% menor
-
-### SPOF
-
-- [2013] Facebook fora em 2013: http://gizmodo.com/5982677/a-facebook-bug-pretty-much-took-down-the-entire-internet
-- [2014] certificado HTTPS da CDN do jQuery expirado: https://twitter.com/igrigorik/status/494973903421194240
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # scripts de terceiros não bloqueantes
-
-## soluções
-
-- Monitoração
-  - SPOF-O-Matic: https://github.com/pmeenan/spof-o-matic
-  - Webpagetest (Advanced Settings -> simulate SPOF)
-  - JS Manners: http://jsmanners.com/
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # scripts de terceiros não bloqueantes
-
-## soluções
-
-- Tag script no fim do body
-  - Não resolve o problema de SPOF, mas diminui o tempo de espera
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # scripts de terceiros não bloqueantes
-
-## soluções
-
-- Carregamento assíncrono
-
-```javascript
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) { return; }
-  js = d.createElement(s); js.id = id;
-  js.src = "//cdn.example.com/script.js";
-  fjs.parentNode.insertBefore(js, fjs);
-})(document, 'script', 'vf-js');
-```
-
-ou
-
-```html
-<script async defer src="//cdn.example.com/script.js"></script>
-```
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # scripts de terceiros não bloqueantes
-
-## Hosted libraries
-
-Ex: jQuery da CDN do Google
-
-```javascript
-<script>
-  var sNew = document.createElement("script");
-  sNew.async = true;
-  sNew.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js";
-  var s0 = document.getElementsByTagName('script')[0];
-  s0.parentNode.insertBefore(sNew, s0);
-
-  window.jQuery ||
-    document.write('<script src="/path/to/your/jquery"></script>');
-</script>
-```
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Responsive Server-Side
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Responsive Server-Side
-
-## Responsive com media queries
-
-- estilos customizados por tamanho de tela
-- arquivo CSS fica cada vez maior
-
-```css
-.thumb {
-  width: 180px;
-  height: 108px;
-}
-
-@media (max-width: 978px) and (min-width: 711px) {
-  .thumb {
-    width: 134px;
-    height: 80px;
-  }
-}
-
-@media (max-width: 710px) {
-  .thumb {
-    width: 140px;
-    height: 84px;
-  }
-}
-```
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Responsive Server-Side
-
-## Responsive com media queries
-
-- mobile: principal gargalo = banda
-- reduzir o tráfego é essencial
-- use ferramentas para simular conexões lentas
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Responsive Server-Side
-
-## Ferramentas
-
-- proxies (Charles, Net Limiter, SlowyApp, Clumsy, Network Link Conditioner)
-- APIs HTML5 (Navigation Timing API, Resource Timing API (Chrome and IE11 only), Network Information API)
-- Remote inspector (Chrome, Safari)
-- Chrome mobile simulator
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Imagens responsivas
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Imagens responsivas
-
-Problema: entregar imagens adequadas para cada resolução de tela
-
-- resolução única: desperdício de banda
-- diferentes resoluções: como gerenciar?
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Imagens responsivas
-
-## Propostas
-
-- tag picture: muitas discussões, pouco consenso, sem suporte dos browsers antigos
-- soluções via JS:
-  - imager.js: https://github.com/BBC-News/Imager.js/
-  - lazy loading: https://luis-almeida.github.io/unveil/
-- Responsive Server-Side
-  - permite entregar imagens com resolução e formatos específicos (ex: webp)
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Monitoração e ferramentas
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Monitoração e ferramentas
-
-## Ferramentas disponíveis online
-
-- WebPagetest: http://www.webpagetest.org/
-- Pagespeed insights: https://developers.google.com/speed/pagespeed/insights/
-- Akamai Mobitest: http://mobitest.akamai.com/
-- Show Slow: http://www.showslow.com/
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Monitoração e ferramentas
-
-## Ferramentas para medir a performance do ponto de vista do usuário
-
-- Boomerang: https://github.com/lognormal/boomerang
-- HTML5 APIs
-  - Navigation Timing
-  - Resource Timing
-  - User Timing
-
-# TODO: imagens das marcações de timing
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Monitoração e ferramentas
-
-## Navigation Timing API
-
-https://developer.mozilla.org/en-US/docs/Navigation_timing
-
-```javascript
-window.performance.timing;
-// retorno:
-{
-  connectEnd: 1412379511942,
-  connectStart: 1412379511010,
-  domComplete: 1412379514540,
-  domContentLoadedEventEnd: 1412379514254,
-  domContentLoadedEventStart: 1412379514243,
-  domInteractive: 1412379514242,
-  domLoading: 1412379512583,
-  domainLookupEnd: 1412379511010,
-  domainLookupStart: 1412379511010,
-  fetchStart: 1412379510754,
-  loadEventEnd: 1412379514543,
-  loadEventStart: 1412379514541,
-  navigationStart: 1412379510754,
-  redirectEnd: 0,
-  redirectStart: 0,
-  requestStart: 1412379511942,
-  responseEnd: 1412379512566,
-  responseStart: 1412379512366,
-  secureConnectionStart: 1412379511209,
-  unloadEventEnd: 0,
-  unloadEventStart: 0
-}
-```
-
-Tempo total para carregar a página:
-
-```javascript
-var perfData = window.performance.timing;
-perfData.loadEventEnd - perfData.navigationStart;
-```
-
-Tempo de resposta de um request:
-
-```javascript
-var perfData = window.performance.timing;
-perfData.responseEnd - perfData.requestStart;
-```
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Monitoração e ferramentas
-
-## Resource Timing API
-
-http://www.sitepoint.com/introduction-resource-timing-api/
-http://www.w3.org/TR/resource-timing/
-
-```javascript
-window.performance.getEntriesByType('resource');
-// retorno:
-[{
-  connectEnd: 0,
-  connectStart: 0,
-  domainLookupEnd: 0,
-  domainLookupStart: 0,
-  duration: 16.396000050008297,
-  entryType: "resource",
-  fetchStart: 1242.3169999965467,
-  initiatorType: "script",
-  name: "http://www.google-analytics.com/analytics.js",
-  redirectEnd: 0,
-  redirectStart: 0,
-  requestStart: 0,
-  responseEnd: 1258.713000046555,
-  responseStart: 0,
-  secureConnectionStart: 0,
-  startTime: 1242.3169999965467
-}, ...]
-```
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # Monitoração e ferramentas
-
-## User Timing API
-
-http://www.sitepoint.com/discovering-user-timing-api/
-http://www.w3.org/TR/user-timing/
-
-```javascript
-window.performance.mark("startOperation");
-doSomethingSlow();
-window.performance.mark("endOperation");
-
-window.performance.measure("slowOperation", "startOperation", "endOperation");
-window.performance.getEntriesByName("slowOperation"); // ou window.performance.getEntriesByName("measure");
-// retorno:
-[{
-  duration: 7444.391000026371,
-  entryType: "measure",
-  name: "slowOperation",
-  startTime: 191147.77599996887
-}, ...]
-
-// Remove todas as marcações
-window.performance.clearMarks();
-// Remove a medição "slowOperation"
-window.performance.clearMeasure("slowOperation");
-```
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # **ads: o mal do século**
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # **ads: o mal do século**
-
-## Problemas com ads
-
-- código não otimizado
-- ignoram boas práticas
-- usam document.write
-- bloqueiam o carregamento da página
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # **ads: o mal do século**
-
-## Problemas com ads
-
-- NY Times
-- eBay
-- Globo.com !
-
-        </script>
-      </section>
-
-      <section data-markdown>
-        <script type="text/template">
-          # **ads: o mal do século**
-
-## Soluções
-
-????
-
-carregar o código em iframe
 
         </script>
       </section>
@@ -572,7 +138,9 @@ carregar o código em iframe
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
+				width: 1024,
+				height: 768,
+				controls: false,
 				progress: true,
 				history: true,
 				center: true,

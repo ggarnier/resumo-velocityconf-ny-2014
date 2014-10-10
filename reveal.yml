@@ -1,4 +1,10 @@
 ---
-order: auto
+order: manual
 slides:
-- 001
+  - capa
+  - intro
+  - temas
+  - percepcao1
+  - percepcao2
+  - percepcao-ilusoes1
+  - percepcao-ilusoes2
