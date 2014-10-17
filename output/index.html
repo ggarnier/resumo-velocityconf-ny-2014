@@ -188,6 +188,65 @@ Fonte: Jakob Nielsen
         </script>
       </section>
 
+      <section data-markdown>
+        <script type="text/template">
+          ## soluções
+
+- Monitoração
+  - SPOF-O-Matic: https://github.com/pmeenan/spof-o-matic
+  - Webpagetest (Advanced Settings -> simulate SPOF)
+  - JS Manners: http://jsmanners.com/
+- Tag script no fim do body
+  - Não resolve o problema de SPOF, mas diminui o tempo de espera
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## soluções
+
+- Carregamento assíncrono
+
+```javascript
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) { return; }
+  js = d.createElement(s); js.id = id;
+  js.src = "//cdn.example.com/script.js";
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, 'script', 'vf-js');
+```
+
+ou
+
+```html
+<script async defer src="//cdn.example.com/script.js" />
+```
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Hosted libraries
+
+Ex: jQuery da CDN do Google
+
+```javascript
+  var sNew = document.createElement("script");
+  sNew.async = true;
+  sNew.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js";
+  var s0 = document.getElementsByTagName('script')[0];
+  s0.parentNode.insertBefore(sNew, s0);
+
+  window.jQuery ||
+    document.write('<script src="/path/to/your/jquery" />');
+```
+
+        </script>
+      </section>
+
 
 			</div>
 

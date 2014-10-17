@@ -1,5 +1,3 @@
-# scripts de terceiros não bloqueantes
-
 ## soluções
 
 - Carregamento assíncrono
@@ -17,5 +15,5 @@
 ou
 
 ```html
-<script async defer src="//cdn.example.com/script.js"></script>
+<script async defer src="//cdn.example.com/script.js" />
 ```

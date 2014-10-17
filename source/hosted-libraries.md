@@ -1,11 +1,8 @@
-# scripts de terceiros não bloqueantes
-
 ## Hosted libraries
 
 Ex: jQuery da CDN do Google
 
 ```javascript
-<script>
   var sNew = document.createElement("script");
   sNew.async = true;
   sNew.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js";
@@ -13,6 +10,5 @@ Ex: jQuery da CDN do Google
   s0.parentNode.insertBefore(sNew, s0);
 
   window.jQuery ||
-    document.write('<script src="/path/to/your/jquery"></script>');
-</script>
+    document.write('<script src="/path/to/your/jquery" />');
 ```
