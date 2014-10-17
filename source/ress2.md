@@ -1,5 +1,3 @@
-# Responsive Server-Side
-
 ## Responsive com media queries
 
 - estilos customizados por tamanho de tela
