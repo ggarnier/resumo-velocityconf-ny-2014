@@ -308,6 +308,51 @@ Ex: jQuery da CDN do Google
         </script>
       </section>
 
+      <section data-markdown>
+        <script type="text/template">
+          ## Soluções
+
+- Detecção de devices
+  - HTML/CSS/JS específicos por device
+  - imagens em tamanhos adequados
+  - possíveis problemas de colisão de cache
+- Detecção de features por Javascript
+  - carregar recursos de acordo com as features suportadas
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          # Imagens responsivas
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## como entregar imagens adequadas para cada resolução de tela?
+
+- **uma única imagem:** desperdício de banda quando a tela é menor
+- **imagens com diferentes resoluções:** como gerenciar?
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Propostas
+
+- tag picture: muitas discussões, pouco consenso, sem suporte dos browsers antigos
+- soluções via JS:
+  - imager.js: https://github.com/BBC-News/Imager.js/
+  - lazy loading: https://luis-almeida.github.io/unveil/
+- Responsive Server-Side
+  - permite entregar imagens com resolução e formatos específicos (ex: webp)
+
+        </script>
+      </section>
+
 
 			</div>
 

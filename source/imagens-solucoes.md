@@ -1,5 +1,3 @@
-# Imagens responsivas
-
 ## Propostas
 
 - tag picture: muitas discussões, pouco consenso, sem suporte dos browsers antigos
