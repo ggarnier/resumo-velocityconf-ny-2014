@@ -20,6 +20,10 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+  	<style media="screen" type="text/css">
+			.reveal section img.clean-image {border:0; background-color:transparent; box-shadow:none;}
+		</style>
+
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
 			if( window.location.search.match( /print-pdf/gi ) ) {
@@ -55,13 +59,13 @@
         <script type="text/template">
           ## 15 a 17 de setembro/2014
 
-### 1 dia de tutoriais
+1 dia de tutoriais
 
-### 2 dias de palestras
+2 dias de palestras
 
-### muitos temas repetidos
+muitos temas repetidos
 
-### poucas palestras aprofundando em algum tema
+poucas palestras se aprofundaram em algum tema
 
         </script>
       </section>
@@ -76,7 +80,7 @@
 - imagens responsivas
 - monitoração e ferramentas
 - postmortems
-- **ads are evil**
+- *ads are evil*
 
         </script>
       </section>
@@ -114,7 +118,7 @@ Fonte: Jakob Nielsen
 
       <section data-markdown>
         <script type="text/template">
-          ## crie ilusões para dar a impressão que o site carrega mais rápido
+          ## exemplos
 
 - conteúdo ATF: carregar o mais rápido possível
 - conteúdo "Below The Fold" pode ser lazy
@@ -164,7 +168,7 @@ Fonte: Jakob Nielsen
           ## performance
 
 - JS bloqueia o parsing da página
-- yahoo mail desabilitou ads por 3 dias ==> load time 73% menor
+- Yahoo Mail desabilitou ads por 3 dias ==> **load time diminuiu 73%**
 
         </script>
       </section>
@@ -173,7 +177,7 @@ Fonte: Jakob Nielsen
         <script type="text/template">
           ## Single Point of Failure (SPOF)
 
-- Um script de 3os pode bloquear sua página
+- Script de terceiros podem bloquear sua página
 - [2013] Facebook fora do ar [1]
 - [2014] certificado HTTPS da CDN do jQuery expirado [2]
 
@@ -207,7 +211,7 @@ Fonte: Jakob Nielsen
         <script type="text/template">
           ## soluções
 
-- Carregamento assíncrono
+Carregamento assíncrono
 
 ```javascript
 (function(d, s, id) {
@@ -219,7 +223,7 @@ Fonte: Jakob Nielsen
 })(document, 'script', 'vf-js');
 ```
 
-ou
+ou, nos browsers mais modernos:
 
 ```html
 <script async defer src="//cdn.example.com/script.js" />
@@ -394,48 +398,6 @@ https://developer.mozilla.org/en-US/docs/Navigation_timing
 
 ![Timing overview](images/timing-overview.png)
 
-```javascript
-window.performance.timing;
-// retorno:
-{
-  connectEnd: 1412379511942,
-  connectStart: 1412379511010,
-  domComplete: 1412379514540,
-  domContentLoadedEventEnd: 1412379514254,
-  domContentLoadedEventStart: 1412379514243,
-  domInteractive: 1412379514242,
-  domLoading: 1412379512583,
-  domainLookupEnd: 1412379511010,
-  domainLookupStart: 1412379511010,
-  fetchStart: 1412379510754,
-  loadEventEnd: 1412379514543,
-  loadEventStart: 1412379514541,
-  navigationStart: 1412379510754,
-  redirectEnd: 0,
-  redirectStart: 0,
-  requestStart: 1412379511942,
-  responseEnd: 1412379512566,
-  responseStart: 1412379512366,
-  secureConnectionStart: 1412379511209,
-  unloadEventEnd: 0,
-  unloadEventStart: 0
-}
-```
-
-Tempo total para carregar a página:
-
-```javascript
-var perfData = window.performance.timing;
-perfData.loadEventEnd - perfData.navigationStart;
-```
-
-Tempo de resposta de um request:
-
-```javascript
-var perfData = window.performance.timing;
-perfData.responseEnd - perfData.requestStart;
-```
-
         </script>
       </section>
 
@@ -606,10 +568,10 @@ http://codeascraft.com/2012/05/22/blameless-postmortems/
         <script type="text/template">
           ## Quem passa por esse problema?
 
-<img src="images/the-new-york-times-logo.jpg" width="300"><!-- .element: class="fragment" data-fragment-index="1" -->
-<img src="images/ebay-logo.jpg" width="300"><!-- .element: class="fragment" data-fragment-index="2" -->
+<img src="images/the-new-york-times-logo.png" width="300"><!-- .element: class="fragment clean-image" data-fragment-index="1" -->
+<img src="images/ebay-logo.png" width="300"><!-- .element: class="fragment clean-image" data-fragment-index="2" -->
 
-<img src="images/globocom-logo.png" width="300"><!-- .element: class="fragment" data-fragment-index="3" -->
+<img src="images/globocom-logo.png" width="300"><!-- .element: class="fragment clean-image" data-fragment-index="3" -->
 
         </script>
       </section>
@@ -618,9 +580,20 @@ http://codeascraft.com/2012/05/22/blameless-postmortems/
         <script type="text/template">
           ## Soluções
 
-![question mark](images/question-mark.png)
+<img src="images/questions.png" width="400">
 
-carregar o código em iframe
+carregar o código num iframe<!-- .element: class="fragment" data-fragment-index="1" -->
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          # Links
+
+http://velocityconf.com/velocityny2014
+
+https://www.youtube.com/playlist?list=PL055Epbe6d5YDU6sikjqcd_YM9XT4OehD
 
         </script>
       </section>

@@ -1,6 +1,6 @@
 ## soluções
 
-- Carregamento assíncrono
+Carregamento assíncrono
 
 ```javascript
 (function(d, s, id) {
@@ -12,7 +12,7 @@
 })(document, 'script', 'vf-js');
 ```
 
-ou
+ou, nos browsers mais modernos:
 
 ```html
 <script async defer src="//cdn.example.com/script.js" />

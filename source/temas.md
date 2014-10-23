@@ -6,4 +6,4 @@
 - imagens responsivas
 - monitoração e ferramentas
 - postmortems
-- **ads are evil**
+- *ads are evil*

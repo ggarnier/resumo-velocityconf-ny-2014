@@ -1,6 +1,6 @@
 ## Single Point of Failure (SPOF)
 
-- Um script de 3os pode bloquear sua página
+- Script de terceiros podem bloquear sua página
 - [2013] Facebook fora do ar [1]
 - [2014] certificado HTTPS da CDN do jQuery expirado [2]
 

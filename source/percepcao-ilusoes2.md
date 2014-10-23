@@ -1,4 +1,4 @@
-## crie ilusões para dar a impressão que o site carrega mais rápido
+## exemplos
 
 - conteúdo ATF: carregar o mais rápido possível
 - conteúdo "Below The Fold" pode ser lazy
