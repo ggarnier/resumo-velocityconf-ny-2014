@@ -33,6 +33,8 @@ slides:
   - resource-timing-api2
   - user-timing-api1
   - user-timing-api2
+  - postmortems1
+  - postmortems2
   - ads1
   - ads2
   - ads3

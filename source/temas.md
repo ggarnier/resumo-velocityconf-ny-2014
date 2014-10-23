@@ -5,4 +5,5 @@
 - Responsive Server-Side
 - imagens responsivas
 - monitoração e ferramentas
+- postmortems
 - **ads are evil**
