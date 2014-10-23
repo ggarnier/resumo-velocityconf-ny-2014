@@ -353,6 +353,213 @@ Ex: jQuery da CDN do Google
         </script>
       </section>
 
+      <section data-markdown>
+        <script type="text/template">
+          # Monitoração e ferramentas
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Ferramentas disponíveis online
+
+- WebPagetest: http://www.webpagetest.org/
+- Pagespeed insights: https://developers.google.com/speed/pagespeed/insights/
+- Akamai Mobitest: http://mobitest.akamai.com/
+- Show Slow: http://www.showslow.com/
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Ferramentas para medir a performance do ponto de vista do usuário
+
+- Boomerang: https://github.com/lognormal/boomerang
+- HTML5 APIs
+  - Navigation Timing
+  - Resource Timing
+  - User Timing
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Navigation Timing API
+
+https://developer.mozilla.org/en-US/docs/Navigation_timing
+
+![Timing overview](images/timing-overview.png)
+
+```javascript
+window.performance.timing;
+// retorno:
+{
+  connectEnd: 1412379511942,
+  connectStart: 1412379511010,
+  domComplete: 1412379514540,
+  domContentLoadedEventEnd: 1412379514254,
+  domContentLoadedEventStart: 1412379514243,
+  domInteractive: 1412379514242,
+  domLoading: 1412379512583,
+  domainLookupEnd: 1412379511010,
+  domainLookupStart: 1412379511010,
+  fetchStart: 1412379510754,
+  loadEventEnd: 1412379514543,
+  loadEventStart: 1412379514541,
+  navigationStart: 1412379510754,
+  redirectEnd: 0,
+  redirectStart: 0,
+  requestStart: 1412379511942,
+  responseEnd: 1412379512566,
+  responseStart: 1412379512366,
+  secureConnectionStart: 1412379511209,
+  unloadEventEnd: 0,
+  unloadEventStart: 0
+}
+```
+
+Tempo total para carregar a página:
+
+```javascript
+var perfData = window.performance.timing;
+perfData.loadEventEnd - perfData.navigationStart;
+```
+
+Tempo de resposta de um request:
+
+```javascript
+var perfData = window.performance.timing;
+perfData.responseEnd - perfData.requestStart;
+```
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Navigation Timing API
+
+```javascript
+window.performance.timing;
+{
+  connectEnd: 1412379511942,
+  connectStart: 1412379511010,
+  domComplete: 1412379514540,
+  domContentLoadedEventEnd: 1412379514254,
+  domContentLoadedEventStart: 1412379514243,
+  ...
+}
+```
+
+Tempo total para carregar a página:
+
+```javascript
+var perfData = window.performance.timing;
+perfData.loadEventEnd - perfData.navigationStart;
+```
+
+Tempo de resposta de um request:
+
+```javascript
+var perfData = window.performance.timing;
+perfData.responseEnd - perfData.requestStart;
+```
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Resource Timing API
+
+http://www.w3.org/TR/resource-timing/
+
+http://www.sitepoint.com/introduction-resource-timing-api/
+
+![Resource timing overview](images/resource-timing-overview.png)
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Resource Timing API
+
+```javascript
+window.performance.getEntriesByType('resource');
+[{
+    entryType: "resource",
+    initiatorType: "script",
+    name: "http://www.google-analytics.com/analytics.js",
+    duration: 16.396000050008297,
+    startTime: 1242.3169999965467,
+    redirectStart: 0,
+    redirectEnd: 0,
+    fetchStart: 1242.3169999965467,
+    connectStart: 0,
+    connectEnd: 0,
+    responseStart: 0,
+    responseEnd: 1258.713000046555,
+    ...
+  }, ...
+]
+```
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## User Timing API
+
+http://www.sitepoint.com/discovering-user-timing-api/
+http://www.w3.org/TR/user-timing/
+
+Instrumentação de operações sob demanda
+
+```javascript
+// Marca o início de uma operação
+window.performance.mark("startOperation");
+
+doSomethingSlow();
+
+// Marca o fim da operação
+window.performance.mark("endOperation");
+
+// Calcula as medições
+window.performance.measure("slowOperation", "startOperation", "endOperation");
+```
+
+        </script>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## User Timing API
+
+```javascript
+window.performance.getEntriesByName("slowOperation");
+// ou window.performance.getEntriesByType("measure");
+[{
+  duration: 7444.391000026371,
+  entryType: "measure",
+  name: "slowOperation",
+  startTime: 191147.77599996887
+}, ...]
+
+// Remove todas as marcações
+window.performance.clearMarks();
+
+// Remove a medição "slowOperation"
+window.performance.clearMeasure("slowOperation");
+```
+
+        </script>
+      </section>
+
 
 			</div>
 

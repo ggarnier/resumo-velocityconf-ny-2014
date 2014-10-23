@@ -1,5 +1,3 @@
-# Monitoração e ferramentas
-
 ## Ferramentas para medir a performance do ponto de vista do usuário
 
 - Boomerang: https://github.com/lognormal/boomerang
@@ -7,5 +5,3 @@
   - Navigation Timing
   - Resource Timing
   - User Timing
-
-# TODO: imagens das marcações de timing

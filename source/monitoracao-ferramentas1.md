@@ -1,5 +1,3 @@
-# Monitoração e ferramentas
-
 ## Ferramentas disponíveis online
 
 - WebPagetest: http://www.webpagetest.org/
