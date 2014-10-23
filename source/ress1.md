@@ -1,1 +1,0 @@
-# Responsive Server-Side
