@@ -1,7 +1,5 @@
-# **ads: o mal do século**
-
 ## Soluções
 
-????
+![question mark](images/question-mark.png)
 
 carregar o código em iframe

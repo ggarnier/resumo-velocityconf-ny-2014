@@ -5,4 +5,4 @@
 - Responsive Server-Side
 - imagens responsivas
 - monitoração e ferramentas
-- **ads: o mal do século**
+- **ads are evil**

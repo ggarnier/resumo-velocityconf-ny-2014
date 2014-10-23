@@ -1,5 +1,3 @@
-# **ads: o mal do século**
-
 ## Problemas com ads
 
 - código não otimizado
